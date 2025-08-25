@@ -1,0 +1,304 @@
+/*
+  Global styles for MARVELLOUS N. GERALD portfolio
+  Theme: Navy, Gold, White
+  Headings: Playfair Display (serif)
+  Body: Inter (sans-serif)
+*/
+
+:root {
+  --color-navy: #0a1f44;
+  --color-gold: #d4af37;
+  --color-white: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-muted: #6b7280;
+  --color-bg: #f7f7fb;
+  --container: 1100px;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(10, 31, 68, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--color-ink);
+  background: var(--color-bg);
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-navy);
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-white);
+  border-bottom: 1px solid rgba(10, 31, 68, 0.08);
+  backdrop-filter: saturate(180%) blur(6px);
+}
+
+.site-header .bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  color: var(--color-navy);
+}
+
+.brand .name {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
+
+.brand .role {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.site-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.site-nav a {
+  padding: 10px 8px;
+  color: var(--color-navy);
+  font-weight: 500;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--color-gold);
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-navy);
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hero */
+.hero {
+  background: radial-gradient(1200px 400px at 20% -10%, rgba(212, 175, 55, 0.15), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
+  padding: 80px 0 60px;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  color: var(--color-navy);
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+h1 { font-size: 2.6rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.4rem; }
+
+.tagline {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--color-navy);
+  color: var(--color-white);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: #0c2759;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(10, 31, 68, 0.2);
+  color: var(--color-navy);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* Sections */
+section { padding: 60px 0; }
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-title .rule {
+  height: 2px;
+  width: 32px;
+  background: var(--color-gold);
+}
+
+/* Featured book card */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid rgba(10, 31, 68, 0.06);
+}
+
+.card-body { padding: 18px; }
+
+.book-meta { color: var(--color-muted); font-size: 0.95rem; }
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .books-grid { grid-template-columns: 1fr; }
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 40px 0;
+}
+
+.site-footer a { color: var(--color-white); opacity: 0.9; }
+.site-footer a:hover { color: var(--color-gold); opacity: 1; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  gap: 14px;
+}
+
+.social a svg { width: 22px; height: 22px; fill: currentColor; }
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .site-nav.open {
+    position: absolute;
+    top: 64px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: var(--color-white);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(10, 31, 68, 0.06);
+  }
+  .nav-toggle { display: inline-block; }
+}
+
+/* Forms */
+form {
+  display: grid;
+  gap: 14px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(10, 31, 68, 0.2);
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+label { font-weight: 600; color: var(--color-navy); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+@media (max-width: 700px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-status { font-size: 0.95rem; color: var(--color-muted); }
+
+/* Reveal animations */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+/* Utilities */
+.muted { color: var(--color-muted); }
+.spacer-s { height: 8px; }
+.spacer-m { height: 16px; }
+.spacer-l { height: 26px; }
+
